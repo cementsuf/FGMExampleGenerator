@@ -20,8 +20,8 @@ public class MyTests {
 		
 		Bundle checkBundle = CreateXML.createBundle();
 		
-		assertEquals(checkBundle.getId().toString(), "13daadee-26e1-4d6a-9e6a-7f4af9b58877");
-		assertEquals(checkBundle.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES), "urn:fhir.nhs.uk:profile/NHS-FGM-Bundle-QueryParameters");
+		assertEquals("13daadee-26e1-4d6a-9e6a-7f4af9b58877", checkBundle.getId().toString() );
+		assertEquals("http://fhir.nhs.net/StructureDefinition/spine-message-bundle-1-0", checkBundle.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
 	} 
 	
 	@Test
@@ -31,8 +31,8 @@ public class MyTests {
 		
 		assertEquals("13daadee-26e1-4d6a-9e6a-7f4af9b58878", checkOrg.getId().toString());
 		assertEquals("THE WHITTINGTON HOSPITAL NHS TRUST",checkOrg.getName());
-		assertEquals( "urn:fhir.nhs.uk:profile/NHS-FGM-Organization", checkOrg.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
-		assertEquals("urn:fhir.nhs.uk/id/ODSOrganisationCode", checkOrg.getIdentifier().get(0).getSystem().toString());
+		assertEquals("http://fhir.nhs.net/StructureDefinition/spine-organization-1-0", checkOrg.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
+		assertEquals("urn:x-fhir:uk:nhs:id:ODSOrganisationCode", checkOrg.getIdentifier().get(0).getSystem().toString());
 		assertEquals("RKE", checkOrg.getIdentifier().get(0).getValue().toString());
 	} 
 	
@@ -41,11 +41,11 @@ public class MyTests {
 		
 		MessageHeader checkMh = CreateXML.createMessageHeader();
 		assertEquals("14daadee-26e1-4d6a-9e6a-7f4af9b58877", checkMh.getId().toString());
-		assertEquals("urn:fhir.nhs.uk:profile/NHS-FGM-MessageHeader-QueryParameters", checkMh.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
+		assertEquals("http://fhir.nhs.net/StructureDefinition/spine-request-messageheader-1-0", checkMh.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
 //		assertEquals("2015-07-04T09:10:14+00:00", checkMh.getTimestamp());
 		assertEquals("13daadee-26e1-4d6a-9e6a-7f4af9b58977", checkMh.getIdentifier());
 		
-		assertEquals("urn:fhir.nhs.uk:vs/MessageEvent", checkMh.getEvent().getSystem());
+		assertEquals("http://fhir.nhs.net/ValueSet/message-event-1-0", checkMh.getEvent().getSystem());
 		assertEquals("urn:nhs:names:services:fgmquery/FGMQuery_1_0", checkMh.getEvent().getCode());
 		
 		assertEquals("FooBar NHS Trust", checkMh.getSource().getName());
@@ -81,13 +81,13 @@ public class MyTests {
 		Practitioner checkPrac = CreateXML.createPractitioner();
 		
 		assertEquals("41fe704c-18e5-11e5-b60b-1697f925ec7b", checkPrac.getId().toString());
-		assertEquals("urn:fhir.nhs.uk:profile/NHS-FGM-Practitioner", checkPrac.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
+		assertEquals("http://fhir.nhs.net/StructureDefinition/spine-practitioner-1-0", checkPrac.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
 		assertEquals("official", checkPrac.getIdentifier().get(0).getUse());
-		assertEquals("urn:fhir.nhs.uk/id/SDSUserID", checkPrac.getIdentifier().get(0).getSystem());
+		assertEquals("http://fhir.nhs.net/Id/sds-user-id", checkPrac.getIdentifier().get(0).getSystem());
 		assertEquals("G12345678", checkPrac.getIdentifier().get(0).getValue());
 
 		assertEquals("official", checkPrac.getIdentifier().get(01).getUse());
-		assertEquals("urn:fhir.nhs.uk/id/SDSRoleProfileID", checkPrac.getIdentifier().get(1).getSystem());
+		assertEquals("http://fhir.nhs.net/Id/sds-role-profile-id", checkPrac.getIdentifier().get(1).getSystem());
 		assertEquals("PT1234", checkPrac.getIdentifier().get(1).getValue());
 		
 		assertEquals("official", checkPrac.getName().getUse());
@@ -97,9 +97,9 @@ public class MyTests {
 		
 		assertEquals("Organization/41fe704c-18e5-11e5-b60b-1697f925ec7b", checkPrac.getPractitionerRole().get(0).getManagingOrganization().getReference().toString());
 		
-//		assertEquals("urn:fhir.nhs.uk:vs/SDSJobRoleName", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getSystem().toString());
-//		assertEquals("R0090", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getCode());
-//		assertEquals("Hospital Practitioner", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getDisplay());
+		assertEquals("http://fhir.nhs.net/ValueSet/sds-job-role-name-1-0", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getSystem().toString());
+		assertEquals("R0090", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getCode());
+		assertEquals("Hospital Practitioner", checkPrac.getPractitionerRole().get(0).getRole().getCoding().get(0).getDisplay());
 
 	}
 	

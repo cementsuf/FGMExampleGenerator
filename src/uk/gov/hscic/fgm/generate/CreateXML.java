@@ -35,7 +35,7 @@ public class CreateXML {
 		bndl.setId("13daadee-26e1-4d6a-9e6a-7f4af9b58877");
 		
 		ResourceMetadataMap meta = new ResourceMetadataMap();
-		meta.put(ResourceMetadataKeyEnum.PROFILES, "urn:fhir.nhs.uk:profile/NHS-FGM-Bundle-QueryParameters");
+		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-message-bundle-1-0");
 		bndl.setResourceMetadata(meta);
 		
 		return bndl;
@@ -48,11 +48,11 @@ public class CreateXML {
 		org.setName("THE WHITTINGTON HOSPITAL NHS TRUST");
 		
 		ResourceMetadataMap meta = new ResourceMetadataMap();
-		meta.put(ResourceMetadataKeyEnum.PROFILES, "urn:fhir.nhs.uk:profile/NHS-FGM-Organization");
+		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-organization-1-0");
 		org.setResourceMetadata(meta);
 		
 		IdentifierDt rr2 = new IdentifierDt();
-		rr2.setSystem("urn:fhir.nhs.uk/id/ODSOrganisationCode").setValue("RKE");
+		rr2.setSystem("http://fhir.nhs.net/Id/ods-organization-code").setValue("RKE");
 		List<IdentifierDt> idenList = new ArrayList<IdentifierDt>();
 		idenList.add(rr2);
 		org.setIdentifier(idenList);
@@ -69,7 +69,7 @@ public class CreateXML {
 		
 		ResourceMetadataMap meta = new ResourceMetadataMap();
 		meta.put(ResourceMetadataKeyEnum.UPDATED, dt);
-		meta.put(ResourceMetadataKeyEnum.PROFILES, "urn:fhir.nhs.uk:profile/NHS-FGM-MessageHeader-QueryParameters");
+		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-request-messageheader-1-0");
 		msgH.setResourceMetadata(meta);
 		
 		msgH.setIdentifier("13daadee-26e1-4d6a-9e6a-7f4af9b58977");
@@ -79,7 +79,7 @@ public class CreateXML {
 		
 		CodingDt event = new CodingDt();
 		
-		event.setSystem("urn:fhir.nhs.uk:vs/MessageEvent");
+		event.setSystem("http://fhir.nhs.net/ValueSet/message-event-1-0");
 		event.setCode("urn:nhs:names:services:fgmquery/FGMQuery_1_0");
 		msgH.setEvent(event);
 		Source src = new Source();
@@ -108,7 +108,7 @@ public class CreateXML {
 		param.setId("7cb73a48-090d-469a-a2b2-04f1e6b11ea2");
 		
 		ResourceMetadataMap meta = new ResourceMetadataMap();
-		meta.put(ResourceMetadataKeyEnum.PROFILES, "urn:fhir.nhs.uk:profile/NHS-FGM-QueryParameters");
+		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-ris-parameters-1-0");
 		param.setResourceMetadata(meta);
 		
 		param.addParameter(new Parameter().setName("RiskIndicator").setValue(new StringDt("FGM")));
@@ -123,13 +123,13 @@ public class CreateXML {
 		Practitioner prac = new Practitioner();
 		prac.setId("41fe704c-18e5-11e5-b60b-1697f925ec7b");
 		ResourceMetadataMap meta = new ResourceMetadataMap();
-		meta.put(ResourceMetadataKeyEnum.PROFILES, "urn:fhir.nhs.uk:profile/NHS-FGM-Practitioner");
+		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-practitioner-1-0");
 		prac.setResourceMetadata(meta);
 		
 		List<IdentifierDt> identifierList = new ArrayList<IdentifierDt>();
 		
-		identifierList.add(0,new IdentifierDt().setUse(IdentifierUseEnum.OFFICIAL).setSystem("urn:fhir.nhs.uk/id/SDSUserID").setValue("G12345678"));
-		identifierList.add(1,new IdentifierDt().setUse(IdentifierUseEnum.OFFICIAL).setSystem("urn:fhir.nhs.uk/id/SDSRoleProfileID").setValue("PT1234"));
+		identifierList.add(0,new IdentifierDt().setUse(IdentifierUseEnum.OFFICIAL).setSystem("http://fhir.nhs.net/Id/sds-user-id").setValue("G12345678"));
+		identifierList.add(1,new IdentifierDt().setUse(IdentifierUseEnum.OFFICIAL).setSystem("http://fhir.nhs.net/Id/sds-role-profile-id").setValue("PT1234"));
 		prac.setIdentifier(identifierList);
 		
 		prac.setName(new HumanNameDt().addFamily("Wood").addGiven("Town").addPrefix("Dr.").setUse(NameUseEnum.OFFICIAL));
@@ -139,7 +139,7 @@ public class CreateXML {
 		PractitionerRole pr1 = new PractitionerRole();
 		pr1.setManagingOrganization(new ResourceReferenceDt().setReference("Organization/41fe704c-18e5-11e5-b60b-1697f925ec7b"));
 		
-		pr1.getRole().getCodingFirstRep().setSystem("urn:fhir.nhs.uk:vs/SDSJobRoleName").setCode("R0090").setDisplay("Hospital Practitioner");
+		pr1.getRole().getCodingFirstRep().setSystem("http://fhir.nhs.net/ValueSet/sds-job-role-name-1-0").setCode("R0090").setDisplay("Hospital Practitioner");
 		
 		PracRoleList.add(pr1);
 		
