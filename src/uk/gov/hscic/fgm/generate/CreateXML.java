@@ -71,8 +71,7 @@ public class CreateXML {
 		meta.put(ResourceMetadataKeyEnum.UPDATED, dt);
 		meta.put(ResourceMetadataKeyEnum.PROFILES, "http://fhir.nhs.net/StructureDefinition/spine-request-messageheader-1-0");
 		msgH.setResourceMetadata(meta);
-		
-		msgH.setIdentifier("13daadee-26e1-4d6a-9e6a-7f4af9b58977");
+//		msgH.setIdentifier("13daadee-26e1-4d6a-9e6a-7f4af9b58977");
 		
 		dt.setValueAsString("2015-07-04T09:10:14+00:00");
 		msgH.setTimestamp(dt);

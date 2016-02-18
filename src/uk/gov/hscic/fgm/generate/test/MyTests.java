@@ -42,8 +42,6 @@ public class MyTests {
 		MessageHeader checkMh = CreateXML.createMessageHeader();
 		assertEquals("14daadee-26e1-4d6a-9e6a-7f4af9b58877", checkMh.getId().toString());
 		assertEquals("http://fhir.nhs.net/StructureDefinition/spine-request-messageheader-1-0", checkMh.getResourceMetadata().get(ResourceMetadataKeyEnum.PROFILES));
-//		assertEquals("2015-07-04T09:10:14+00:00", checkMh.getTimestamp());
-		assertEquals("13daadee-26e1-4d6a-9e6a-7f4af9b58977", checkMh.getIdentifier());
 		
 		assertEquals("http://fhir.nhs.net/ValueSet/message-event-1-0", checkMh.getEvent().getSystem());
 		assertEquals("urn:nhs:names:services:fgmquery/FGMQuery_1_0", checkMh.getEvent().getCode());
