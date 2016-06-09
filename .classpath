@@ -9,12 +9,12 @@
 	<classpathentry kind="lib" path="lib/httpcore-4.4.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.14.jar"/>
 	<classpathentry kind="lib" path="lib/httpclient-4.5.1.jar"/>
-	<classpathentry kind="lib" path="lib/hapi-fhir-base-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-structures-dstu-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-structures-dstu2-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-structures-dstu3-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-structures-hl7org-dstu2-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-validation-resources-dstu2-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/hapi-fhir-validation-resources-dstu3-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/hapi-fhir-base-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

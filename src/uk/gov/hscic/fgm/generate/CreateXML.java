@@ -138,7 +138,7 @@ public class CreateXML {
 		PractitionerRole pr1 = new PractitionerRole();
 		pr1.setManagingOrganization(new ResourceReferenceDt().setReference("Organization/41fe704c-18e5-11e5-b60b-1697f925ec7b"));
 		
-		pr1.getRole().getCodingFirstRep().setSystem("http://fhir.nhs.net/ValueSet/sds-job-role-name-1-0").setCode("R0090").setDisplay("Hospital Practitioner");
+		//pr1.getRole().getCodingFirstRep().setSystem("http://fhir.nhs.net/ValueSet/sds-job-role-name-1-0").setCode("R0090").setDisplay("Hospital Practitioner");
 		
 		PracRoleList.add(pr1);
 		
